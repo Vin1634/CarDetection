@@ -1,0 +1,13 @@
+x,y,width,height,confidence,class,class_id,detection_id,image_path,prediction_type,image
+2727,518,153,182,0.8729119300842285,car,0,26ba9c08-b638-4f52-bdb5-d58c4e0375d6,C:\Users\felix\Documents\GitHub\CarDetection\testzone\circle\DJI_0035.JPG,ObjectDetectionModel,DJI_0035.JPG
+2346,1134,162,239,0.8496413230895996,car,0,51f687d9-6cbd-46ef-91f8-348735fc2c99,C:\Users\felix\Documents\GitHub\CarDetection\testzone\circle\DJI_0035.JPG,ObjectDetectionModel,DJI_0035.JPG
+2526,729,145,182,0.8484370708465576,car,0,7053c2de-6a77-4e11-b146-f8564b710354,C:\Users\felix\Documents\GitHub\CarDetection\testzone\circle\DJI_0035.JPG,ObjectDetectionModel,DJI_0035.JPG
+2227,518,196,125,0.8339196443557739,car,0,985df08b-54c9-40df-a902-1ba58cf55229,C:\Users\felix\Documents\GitHub\CarDetection\testzone\circle\DJI_0035.JPG,ObjectDetectionModel,DJI_0035.JPG
+2111,1886,85,159,0.8231467604637146,car,0,d1c0cd25-8d82-4661-96b8-57417f587121,C:\Users\felix\Documents\GitHub\CarDetection\testzone\circle\DJI_0035.JPG,ObjectDetectionModel,DJI_0035.JPG
+2838,159,307,319,0.8226901888847351,car,0,17d6809e-ab1e-4b6a-9dfe-5211d771dbdb,C:\Users\felix\Documents\GitHub\CarDetection\testzone\circle\DJI_0035.JPG,ObjectDetectionModel,DJI_0035.JPG
+1273,758,239,102,0.815269947052002,car,0,ff8ae10f-741d-4222-8d83-18d5c2723e0a,C:\Users\felix\Documents\GitHub\CarDetection\testzone\circle\DJI_0035.JPG,ObjectDetectionModel,DJI_0035.JPG
+1077,609,222,91,0.7910211682319641,car,0,156dd4fe-07f2-41f5-97bd-43785a0b224e,C:\Users\felix\Documents\GitHub\CarDetection\testzone\circle\DJI_0035.JPG,ObjectDetectionModel,DJI_0035.JPG
+2193,1462,94,165,0.7879440188407898,car,0,aff9efed-5ee2-430b-a6bd-916e532ecb31,C:\Users\felix\Documents\GitHub\CarDetection\testzone\circle\DJI_0035.JPG,ObjectDetectionModel,DJI_0035.JPG
+3719,51,136,102,0.6416998505592346,car,0,5bfffd0a-2716-4ee4-9883-6b458a0c0bcd,C:\Users\felix\Documents\GitHub\CarDetection\testzone\circle\DJI_0035.JPG,ObjectDetectionModel,DJI_0035.JPG
+5001,25,188,51,0.5594422817230225,car,0,055ca5e6-e0d4-4627-9eb6-1d24e3654e7a,C:\Users\felix\Documents\GitHub\CarDetection\testzone\circle\DJI_0035.JPG,ObjectDetectionModel,DJI_0035.JPG
+2834,1476,196,102,0.5500406622886658,car,0,c0eee84c-3124-4036-b100-a50649b78d16,C:\Users\felix\Documents\GitHub\CarDetection\testzone\circle\DJI_0035.JPG,ObjectDetectionModel,DJI_0035.JPG
