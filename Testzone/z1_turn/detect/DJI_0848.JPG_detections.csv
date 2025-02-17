@@ -1,0 +1,8 @@
+x,y,width,height,confidence,class,class_id,detection_id,image_path,prediction_type,image
+4398,2337,282,205,0.8645100593566895,car,0,c2f80b52-3576-4405-a31e-d4cce0e18baa,E:\Data_MaterThesis\Data_Ashaiman\Raw_Images\Zone_1\100MEDIA\DJI_0848.JPG,ObjectDetectionModel,DJI_0848.JPG
+508,752,247,125,0.8326188325881958,car,0,ed2b6edc-3275-43aa-b823-c699773eac9d,E:\Data_MaterThesis\Data_Ashaiman\Raw_Images\Zone_1\100MEDIA\DJI_0848.JPG,ObjectDetectionModel,DJI_0848.JPG
+628,376,350,171,0.8262514472007751,car,0,93b1ae83-0638-4eb8-9997-52ccdaf30bea,E:\Data_MaterThesis\Data_Ashaiman\Raw_Images\Zone_1\100MEDIA\DJI_0848.JPG,ObjectDetectionModel,DJI_0848.JPG
+649,136,324,148,0.8106968402862549,car,0,d26c7a51-83a1-4023-8fd4-05e6228ad048,E:\Data_MaterThesis\Data_Ashaiman\Raw_Images\Zone_1\100MEDIA\DJI_0848.JPG,ObjectDetectionModel,DJI_0848.JPG
+3890,2060,239,108,0.8084946870803833,car,0,8abe61e3-3d09-4e83-a464-4b0139d2b436,E:\Data_MaterThesis\Data_Ashaiman\Raw_Images\Zone_1\100MEDIA\DJI_0848.JPG,ObjectDetectionModel,DJI_0848.JPG
+111,629,153,267,0.7847887277603149,car,0,5fc7db20-94a1-4da8-b7be-75f468b4e7f8,E:\Data_MaterThesis\Data_Ashaiman\Raw_Images\Zone_1\100MEDIA\DJI_0848.JPG,ObjectDetectionModel,DJI_0848.JPG
+2650,57,136,114,0.7747365236282349,car,0,86f52d50-fe5b-4275-9b62-4fbb8faff667,E:\Data_MaterThesis\Data_Ashaiman\Raw_Images\Zone_1\100MEDIA\DJI_0848.JPG,ObjectDetectionModel,DJI_0848.JPG

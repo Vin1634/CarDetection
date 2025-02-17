@@ -1,0 +1,16 @@
+x,y,width,height,confidence,class,class_id,detection_id,image_path,prediction_type,image
+3496,273,307,421,0.8605656623840332,car,0,49bf34c7-a3ea-423b-b1ff-5f73f8729425,C:\Users\felix\Documents\GitHub\CarDetection\testzone\intersection\DJI_0707.JPG,ObjectDetectionModel,DJI_0707.JPG
+880,1262,222,153,0.856600284576416,car,0,536bcea6-15d3-47d4-ab2b-b60f28eb9d46,C:\Users\felix\Documents\GitHub\CarDetection\testzone\intersection\DJI_0707.JPG,ObjectDetectionModel,DJI_0707.JPG
+4069,2191,136,210,0.843480110168457,car,0,49173178-f699-4db1-82a1-e15a133699b4,C:\Users\felix\Documents\GitHub\CarDetection\testzone\intersection\DJI_0707.JPG,ObjectDetectionModel,DJI_0707.JPG
+1641,803,273,182,0.8418154716491699,car,0,d143eacc-3b15-4060-8b19-e35027edba48,C:\Users\felix\Documents\GitHub\CarDetection\testzone\intersection\DJI_0707.JPG,ObjectDetectionModel,DJI_0707.JPG
+4493,3531,111,188,0.8346929550170898,car,0,caa07331-996f-4a23-b8b9-d105ece95f37,C:\Users\felix\Documents\GitHub\CarDetection\testzone\intersection\DJI_0707.JPG,ObjectDetectionModel,DJI_0707.JPG
+188,869,239,165,0.8339504599571228,car,0,79ac30d0-b976-425b-b247-099fa985eb72,C:\Users\felix\Documents\GitHub\CarDetection\testzone\intersection\DJI_0707.JPG,ObjectDetectionModel,DJI_0707.JPG
+3791,863,128,165,0.8295673131942749,car,0,61a0c454-c60c-4fa4-9afe-c27f649554f2,C:\Users\felix\Documents\GitHub\CarDetection\testzone\intersection\DJI_0707.JPG,ObjectDetectionModel,DJI_0707.JPG
+461,3086,290,153,0.814781665802002,car,0,a6f86581-bfd4-4456-aa63-795c2f41cc34,C:\Users\felix\Documents\GitHub\CarDetection\testzone\intersection\DJI_0707.JPG,ObjectDetectionModel,DJI_0707.JPG
+2120,54,307,108,0.804567277431488,car,0,d2171dc3-6af4-41fa-8eed-31a271f9e62f,C:\Users\felix\Documents\GitHub\CarDetection\testzone\intersection\DJI_0707.JPG,ObjectDetectionModel,DJI_0707.JPG
+4206,2804,119,216,0.8028706312179565,car,0,91652cf1-f589-4587-8793-1d9f803da861,C:\Users\felix\Documents\GitHub\CarDetection\testzone\intersection\DJI_0707.JPG,ObjectDetectionModel,DJI_0707.JPG
+5339,3078,111,171,0.7967281341552734,car,0,82f66d74-ec53-48bc-a29c-0b734ff268f2,C:\Users\felix\Documents\GitHub\CarDetection\testzone\intersection\DJI_0707.JPG,ObjectDetectionModel,DJI_0707.JPG
+4292,3556,119,171,0.7731878757476807,car,0,77b50dd9-679e-4a3b-8d56-28c4f7e30cd3,C:\Users\felix\Documents\GitHub\CarDetection\testzone\intersection\DJI_0707.JPG,ObjectDetectionModel,DJI_0707.JPG
+4617,2761,188,85,0.752261757850647,car,0,bb2d0930-f35f-4f2d-ad4f-0eddbe709ae6,C:\Users\felix\Documents\GitHub\CarDetection\testzone\intersection\DJI_0707.JPG,ObjectDetectionModel,DJI_0707.JPG
+444,3223,307,153,0.7121943235397339,car,0,4a28a803-e8df-4165-93af-9df88451f857,C:\Users\felix\Documents\GitHub\CarDetection\testzone\intersection\DJI_0707.JPG,ObjectDetectionModel,DJI_0707.JPG
+2894,3479,401,165,0.6160482168197632,car,0,b6913f29-cc39-4b19-9c07-1e45a8a60ba5,C:\Users\felix\Documents\GitHub\CarDetection\testzone\intersection\DJI_0707.JPG,ObjectDetectionModel,DJI_0707.JPG
