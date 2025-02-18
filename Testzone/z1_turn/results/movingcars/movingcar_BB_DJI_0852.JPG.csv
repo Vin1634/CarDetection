@@ -1,0 +1,3 @@
+x,y,width,height,confidence,class,class_id,detection_id,image_path,prediction_type,image
+5322,2918,299,182,0.7835333943367004,car,0,0e1ea53f-9f39-4759-b483-62a6312812c9,E:\Data_MaterThesis\Data_Ashaiman\Raw_Images\Zone_1\100MEDIA\DJI_0852.JPG,ObjectDetectionModel,DJI_0852.JPG
+5395,2525,153,148,0.7687098979949951,car,0,0730709a-44cf-44f4-b5a0-be7ece905333,E:\Data_MaterThesis\Data_Ashaiman\Raw_Images\Zone_1\100MEDIA\DJI_0852.JPG,ObjectDetectionModel,DJI_0852.JPG
