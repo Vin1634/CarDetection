@@ -1,4 +1,5 @@
 x,y,width,height,confidence,class,class_id,detection_id,image_path,prediction_type,image
+401,438,239,171,0.8671852350234985,car,0,e47f4769-7418-4333-8c5e-859fb90cdfa2,C:\Users\felix\Documents\GitHub\CarDetection\testzone\intersection\DJI_0707.JPG,ObjectDetectionModel,DJI_0707.JPG
 3496,273,307,421,0.8605656623840332,car,0,49bf34c7-a3ea-423b-b1ff-5f73f8729425,C:\Users\felix\Documents\GitHub\CarDetection\testzone\intersection\DJI_0707.JPG,ObjectDetectionModel,DJI_0707.JPG
 880,1262,222,153,0.856600284576416,car,0,536bcea6-15d3-47d4-ab2b-b60f28eb9d46,C:\Users\felix\Documents\GitHub\CarDetection\testzone\intersection\DJI_0707.JPG,ObjectDetectionModel,DJI_0707.JPG
 4069,2191,136,210,0.843480110168457,car,0,49173178-f699-4db1-82a1-e15a133699b4,C:\Users\felix\Documents\GitHub\CarDetection\testzone\intersection\DJI_0707.JPG,ObjectDetectionModel,DJI_0707.JPG

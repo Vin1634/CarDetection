@@ -1,0 +1,5 @@
+x,y,width,height,confidence,class,class_id,detection_id,image_path,prediction_type,image
+3655,1536,128,245,0.8434857726097107,car,0,bf0e8e77-81ef-4126-8c60-2a800de0d448,..\..\testzone\Zone10_Market\raw_images\DJI_0088.JPG,ObjectDetectionModel,DJI_0088.JPG
+3441,689,111,228,0.8009275794029236,car,0,c6b5243c-45b5-4eca-a956-5bb758cc5ef0,..\..\testzone\Zone10_Market\raw_images\DJI_0088.JPG,ObjectDetectionModel,DJI_0088.JPG
+5407,1014,128,102,0.7543169260025024,car,0,1db65bb6-44f0-4a7b-bb21-a39c139f923f,..\..\testzone\Zone10_Market\raw_images\DJI_0088.JPG,ObjectDetectionModel,DJI_0088.JPG
+3740,1915,128,228,0.7249441146850586,car,0,6e9d4327-c5e3-48ae-932f-9b322db7ce76,..\..\testzone\Zone10_Market\raw_images\DJI_0088.JPG,ObjectDetectionModel,DJI_0088.JPG

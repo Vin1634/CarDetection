@@ -1,0 +1,11 @@
+x,y,width,height,confidence,class,class_id,detection_id,image_path,prediction_type,image
+4091,313,247,182,0.836539626121521,car,0,f0616524-2eda-4ee7-8016-3f62dfd5d963,..\..\testzone\Zone10_Market\raw_images\DJI_0089.JPG,ObjectDetectionModel,DJI_0089.JPG
+3719,2411,136,239,0.7956647872924805,car,0,1e6acc1f-d3f1-435b-b311-c85c86a661fb,..\..\testzone\Zone10_Market\raw_images\DJI_0089.JPG,ObjectDetectionModel,DJI_0089.JPG
+3548,1721,102,239,0.7927789092063904,car,0,3ea0cb8b-d127-475b-a816-e02a6823fd05,..\..\testzone\Zone10_Market\raw_images\DJI_0089.JPG,ObjectDetectionModel,DJI_0089.JPG
+3146,114,153,228,0.785003662109375,car,0,4eaeb063-a56a-4ca6-93c1-1e53d707fbf5,..\..\testzone\Zone10_Market\raw_images\DJI_0089.JPG,ObjectDetectionModel,DJI_0089.JPG
+3779,2716,119,233,0.7834563255310059,car,0,b5c7afe5-c728-4949-95f6-56945abf3e01,..\..\testzone\Zone10_Market\raw_images\DJI_0089.JPG,ObjectDetectionModel,DJI_0089.JPG
+3928,550,265,233,0.7766631841659546,car,0,fc61b680-1b02-4459-96f1-62858f3bc50b,..\..\testzone\Zone10_Market\raw_images\DJI_0089.JPG,ObjectDetectionModel,DJI_0089.JPG
+4377,68,239,136,0.7647343873977661,car,0,122866ec-6ded-498a-a4d9-4dd7c029102b,..\..\testzone\Zone10_Market\raw_images\DJI_0089.JPG,ObjectDetectionModel,DJI_0089.JPG
+3296,45,145,91,0.7354542016983032,car,0,ac69dba7-bee9-45c2-a112-731edf51264e,..\..\testzone\Zone10_Market\raw_images\DJI_0089.JPG,ObjectDetectionModel,DJI_0089.JPG
+5420,1749,102,102,0.637209415435791,car,0,6a2ac624-6e43-4f8b-b867-196c63ab14c0,..\..\testzone\Zone10_Market\raw_images\DJI_0089.JPG,ObjectDetectionModel,DJI_0089.JPG
+3843,2428,213,410,0.5250144600868225,car,0,1df5aa51-f3aa-4e83-b3b9-70f35cb14b83,..\..\testzone\Zone10_Market\raw_images\DJI_0089.JPG,ObjectDetectionModel,DJI_0089.JPG

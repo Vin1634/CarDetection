@@ -1,0 +1,24 @@
+import csv
+
+# Function to save image metadata to a CSV file
+def save_metadata_to_csv(image_metadata, output_file):
+    # Open the CSV file for writing
+    with open(output_file, mode='w', newline='', encoding='utf-8') as csvfile:
+        # Create a CSV writer
+        writer = csv.writer(csvfile)
+        
+        # Write the header row
+        # Use the keys from the first image's metadata as the header
+        header = ['Image'] + list(next(iter(image_metadata.values())).keys())
+        writer.writerow(header)
+        
+        # Write the metadata rows
+        for image, metadata in image_metadata.items():
+            # Combine the image name and metadata values
+            row = [image] + [metadata[key] for key in metadata]
+            writer.writerow(row)
+
+# Example usage
+output_csv = 'image_metadata_zone14.csv'  # Specify the output file name
+save_metadata_to_csv(image_metadata, output_csv)
+print(f"Metadata saved to {output_csv}")
