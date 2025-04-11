@@ -1,28 +1,17 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
+import os
 import pandas as pd
 import numpy as np
 import cv2
+import re
 from simple_lama import SimpleLama
 from PIL import Image
-
-
-# In[2]:
-
-
-import os
-os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
-
-
-# In[3]:
-
-
 import torch
+from PIL import Image, ExifTags
 
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 # Check if CUDA is available
 print("CUDA available:", torch.cuda.is_available())
@@ -35,31 +24,20 @@ if torch.cuda.is_available():
     print("Device name:", torch.cuda.get_device_name(0))
 
 
-# In[15]:
-
-
-# Folder with images and CSVs
+# Folder paths
 # csv folder contains the CSVs with the bounding boxes of moving cars
-csv_folder = r'C:\Users\felix\Documents\GitHub\CarDetection\testzone\intersection\results\movingcars_csv'
+csv_folder = r'CarDetection\Testzone\Zone1_intersection\results\movingcars_csv'
 # image folder contains the images
-image_folder = r'C:\Users\felix\Documents\GitHub\CarDetection\testzone\intersection\raw_images'
+image_folder = r'CarDetection\Testzone\Zone1_intersection\raw_images'
 # mask folder contains the masks
-mask_folder = r'C:\Users\felix\Documents\GitHub\CarDetection\testzone\intersection\results\masks'
-output_folder = r'C:\Users\felix\Documents\GitHub\CarDetection\testzone\intersection\results\inpainted'
-
+mask_folder = r'\Testzone\Zone1_intersection\results\masks'
+# output folder contains the inpainted images
+output_folder = r'CarDetection\Testzone\Zone1_intersection\results\inpainted'
+# Folder with all the images for the orthomosaic
+final_image_folder = r"\MT_Data\results\Zone1_intersection\all_inpainted"
+padding = 20
 
 # ### Create Masks
-
-# In[14]:
-
-
-import os
-import cv2
-import numpy as np
-import pandas as pd
-
-
-
 # Ensure the mask folder exists
 os.makedirs(mask_folder, exist_ok=True)
 
@@ -107,134 +85,59 @@ for image_file in os.listdir(image_folder):
 
 
 # ### Simple Lama Inpaint 
-
-# In[16]:
-
-
-from simple_lama import SimpleLama
-from PIL import Image
-import numpy as np
-import os
-from PIL import Image, ExifTags
-
-
-padding = 20
-
-
-
-# Ordner mit den Bildern und Masken
-#image_folder = r'C:\Users\felix\Documents\GitHub\CarDetection\testzone\turn\raw_images'
-#mask_folder = r'C:\Users\felix\Documents\GitHub\CarDetection\testzone\z1_turn\results\masks'
-
-
-# Stelle sicher, dass der Ausgabe-Ordner existiert
+# Ensure the output folder exists
 os.makedirs(output_folder, exist_ok=True)
 
-# SimpleLama initialisieren
+# SimpleLama 
 lama = SimpleLama()
 
-# Alle Bilder durchgehen
+# Iterate through all images
 for image_file in os.listdir(image_folder):
     if image_file.lower().endswith((".jpg", ".png")):
         image_path = os.path.join(image_folder, image_file)
-        image_name = os.path.splitext(image_file)[0]  # Ohne .jpg/.png
+        image_name = os.path.splitext(image_file)[0]  # Without .jpg/.png
 
         # Check if the image has already been inpainted
         output_path = os.path.join(output_folder, f"{image_name}_inpainted_p{padding}.JPEG")
         if os.path.exists(output_path):
-            print(f"Bild {image_file} wurde bereits inpainted, überspringe...")
+            print(f"Image {image_file} has already been inpainted, skipping...")
             continue
 
-        # Passende Masken-Datei suchen
+        # Find the corresponding mask file
         mask_file = f"{image_name}_mask_p{padding}.png"
         mask_path = os.path.join(mask_folder, mask_file)
         if not os.path.exists(mask_path):
-            print(f"Keine Maske für {image_file} gefunden, überspringe...")
+            print(f"No mask found for {image_file}, skipping...")
             continue
 
-        # Lade das Bild und die Maske
+        # Load the image and the mask
         image = Image.open(image_path)
-        mask = Image.open(mask_path).convert('L')  # In Graustufen umwandeln
+        mask = Image.open(mask_path).convert('L')  # Convert to grayscale
 
-        # Maske binär machen (0 oder 255)
-        mask = mask.point(lambda x: 255 if x > 128 else 0)  # Alles über 128 wird 255, sonst 0
-        mask = mask.convert('1')  # In binäres Format umwandeln
+        # Make the mask binary (0 or 255)
+        mask = mask.point(lambda x: 255 if x > 128 else 0)  # Everything above 128 becomes 255, otherwise 0
+        mask = mask.convert('1')  # Convert to binary format
 
-        # Debug: Überprüfe, ob Bild & Maske die gleiche Größe haben
-        assert image.size == mask.size, f"Fehler: Bildgröße {image.size} != Maskengröße {mask.size}"
+        # Debug: Check if the image & mask have the same size
+        assert image.size == mask.size, f"Error: Image size {image.size} != Mask size {mask.size}"
 
-        # Inpainting ausführen
+        # Perform inpainting
         result = lama(image, mask)
 
-        # Lade das Originalbild mit EXIF-Daten
+        # Load the original image with EXIF data
         original_image = Image.open(image_path)
         exif_data = original_image.info.get("exif")
 
-        # Speichere das inpaintete Bild mit den EXIF-Daten des Originals
+        # Save the inpainted image with the EXIF data of the original
         output_path = os.path.join(output_folder, f"{image_name}_inpainted_p{padding}.JPEG")
         result.save(output_path, "JPEG", quality=90, optimize=True, exif=exif_data)
 
-        # Debug: Überprüfe, ob die Datei gespeichert wurde
-        assert os.path.exists(output_path), f"Fehler: Datei wurde nicht gespeichert {output_path}"
+        # Debug: Check if the file was saved
+        assert os.path.exists(output_path), f"Error: File was not saved {output_path}"
 
-        print(f"Inpainting erfolgreich! Ergebnis gespeichert unter: {output_path}")
-
-#run 10min for 5 images
-
-
-# ### Inpainting with cv2
-
-# import os
-# import cv2
-# import numpy as np
-# 
-# # Paths to the folders
-# image_folder = r'C:\Users\felix\Documents\GitHub\CarDetection\testzone\intersection'
-# mask_folder = r'C:\Users\felix\Documents\GitHub\CarDetection\testzone\intersection\results\masks'
-# output_folder = r'C:\Users\felix\Documents\GitHub\CarDetection\testzone\intersection\results\inpainted'
-# 
-# # Ensure the output folder exists
-# os.makedirs(output_folder, exist_ok=True)
-# 
-# # Iterate through all images
-# for image_file in os.listdir(image_folder):
-#     if image_file.lower().endswith((".jpg", ".png")):
-#         image_path = os.path.join(image_folder, image_file)
-#         image_name = os.path.splitext(image_file)[0]  # Without .jpg/.png
-# 
-#         # Check for corresponding mask
-#         mask_file = f"{image_name}_mask_p20.png"
-#         mask_path = os.path.join(mask_folder, mask_file)
-#         if not os.path.exists(mask_path):
-#             print(f"No corresponding mask for {image_file} found, skipping...")
-#             continue
-# 
-#         # Load the damaged image
-#         damaged_img = cv2.imread(image_path)
-# 
-#         # Load the mask
-#         mask = cv2.imread(mask_path, cv2.IMREAD_GRAYSCALE)
-# 
-#         # Inpaint the image
-#         inpainted_img = cv2.inpaint(damaged_img, mask, inpaintRadius=3, flags=cv2.INPAINT_TELEA)
-# 
-#         # Save the inpainted image
-#         output_path = os.path.join(output_folder, f"{image_name}_inpainted.jpg")
-#         cv2.imwrite(output_path, inpainted_img)
-#         print(f"Inpainted image saved: {output_path}")
-# 
-
-# ### Check for skipped Images 
-# they have to be added to the image folder in order to calculate the orthomosaics with pix4d
-
-# In[7]:
-
-
-import os
-import re
+        print(f"Inpainting successful! Result saved at: {output_path}")
 
 # Folder containing images
-image_folder = r"C:\Users\felix\Documents\MT_Data\results\zone10_market\inpainted"
 
 def find_missing_images(folder):
     # Regex pattern to match filenames like DJI_XXXX, ignoring extra suffixes
@@ -248,7 +151,7 @@ def find_missing_images(folder):
             numbers.append(int(match.group(1)))  # Extract XXXX as an integer
 
     if not numbers:
-        print("❌ No matching images found.")
+        print("No matching images found.")
         return
     
     # Find the first and last number
@@ -259,13 +162,11 @@ def find_missing_images(folder):
     missing_numbers = [num for num in range(first, last + 1) if num not in numbers]
 
     if missing_numbers:
-        print(f"❌ Missing image numbers: {missing_numbers}")
+        print(f"Missing image numbers: {missing_numbers}")
         missing_filenames = [f"DJI_{num:04d}.JPG" for num in missing_numbers]
-        print(f"📂 Expected missing files: {missing_filenames}")
+        print(f"Expected missing files: {missing_filenames}")
     else:
-        print("✅ No missing images found. All numbers are consecutive.")
+        print("No missing images found. All numbers are consecutive.")
 
 # Run the check
-find_missing_images(image_folder)
-
-
+find_missing_images(final_image_folder)

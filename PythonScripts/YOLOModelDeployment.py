@@ -3,9 +3,6 @@
 
 # ### Detecting cars with Yolo hosted on Roboflow
 
-# In[ ]:
-
-
 import cv2
 import os
 import csv
@@ -18,8 +15,9 @@ rf = Roboflow(api_key="JZS2yC3dw3yIHxghZmUP")
 project = rf.workspace().project("cardetectionashaiman")
 model = project.version(2).model
 
-folder_path = r'C:\Users\felix\Documents\MT_Data\Zone10_market' 
-output_path = r'C:\Users\felix\Documents\MT_Data\Yolo\Zone10_market'  # Output folder for detected images and CSVs
+folder_path = r"CarDetection\Testzone\Zone1_intersection\raw_images"
+# Output folder for detected images and CSVs
+output_path = r"CarDetection\Testzone\Zone1_Intersection\detected"
 os.makedirs(output_path, exist_ok=True)  # Ensure output folder exists
 
 # Get all image filenames in the folder
@@ -42,7 +40,7 @@ for filename in image_filenames:
         csv_output_path = os.path.join(output_path, f"{filename}_detections.csv")
         df.to_csv(csv_output_path, index=False)
 
-        # Draw bounding boxes on the image
+        # Draw bounding boxes on the image (optional)
         """""
         for det in detections:
             x, y, w, h = int(det['x']), int(det['y']), int(det['width']), int(det['height'])
