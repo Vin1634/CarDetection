@@ -1,2 +1,0 @@
-x,y,width,height,confidence,class,class_id,detection_id,image_path,prediction_type,image
-2693,1869,102,205,0.8234553337097168,car,0,c5dff38a-fe62-492c-8f25-e372f87cca83,E:\Data_MaterThesis\Data_Ashaiman\Raw_Images\Zone_1\100MEDIA\DJI_0849.JPG,ObjectDetectionModel,DJI_0849.JPG
